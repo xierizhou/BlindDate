@@ -571,9 +571,7 @@
         });
     }
     $("#new_entry").submit(function(){
-        if(submit_bool === false){
-            message(submit_message);return false;
-        }
+
         if(!$("select[name='province']").val()){
             message("请填写省份");return false;
         }
@@ -613,7 +611,7 @@
         if(!$("input[name='wechat']").val()){
             message("请填写微信号");return false;
         }
-        if(!submit_message){
+        if(!submit_bool){
             message(submit_message);return false;
         }
 
