@@ -231,7 +231,7 @@
                                     <p><span style="color:#808080;">请点击后上下划动，修改为您的生日；</span><span style="color:#daa520;">务必准确填写生日</span><span style="color:#808080;">，不然无法通过年龄段查询到您的信息。</span></p>
                                 </div>
                                 <div class="gd-input-container">
-                                    <input type="datetime-local" value="1986-06-06" placeholder="年-月-日"  min="" max="" class="input-with-icon transformed-date-input enhanced-input" data-role="date"  name="entry[field_30]" />
+                                    <input type="date" value="1986-06-06" placeholder="年-月-日"  min="" max="" class="input-with-icon transformed-date-input enhanced-input" data-role="date"  name="entry[field_30]" />
                                     <i class="gd-input-icon gd-icon-calendar"></i>
                                 </div>
                             </div>
