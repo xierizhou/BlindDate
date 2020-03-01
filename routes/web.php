@@ -18,4 +18,6 @@
 Route::group(['namespace' => 'Home'],function ()
 {
     Route::get('/', 'IndexController@index');
+    Route::post('/store', 'IndexController@store');
+    Route::post('/image/upload', 'IndexController@upload');
 });

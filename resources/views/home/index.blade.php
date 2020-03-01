@@ -11,13 +11,10 @@
     <meta property="og:description" content="为同城单身找对象✡登记表提交数据。&amp;lt;p&amp;gt;&amp;lt;span style=&amp;quot;color:#808080&amp;quot;&amp;gt;&amp;lt;strong&amp;gt;介绍：&amp;lt;/str..." />
     <meta property="og:image" content="https://pub-files.jinshuju.com/MvyQeJ/THIpQ7/wti/20181212195415_61e65f@wtinormal" />
     {{--<link rel="shortcut icon" type="image/x-icon" href="https://assets.jinshuju.com/assets/favicon-98b9708694b169dabcdb977769c39c3d56356e7b8f79495f32b0e6bdf53579f4.ico" />--}}
-    <link rel="stylesheet" href="/css/lCalendar.css">
-    <link rel="stylesheet" media="screen" href="/module_registration/published-ca7f11682788968099afb9045dc7502e65da50572f5a0feb9b22db0b66d3da86.css" debug="false" />
-    <style type="text/css">
 
-    </style>
-    <script src="/module_registration/hm.js"></script>
-    <script src="/js/lCalendar.js"></script>
+    <link rel="stylesheet" media="screen" href="/module_registration/published-ca7f11682788968099afb9045dc7502e65da50572f5a0feb9b22db0b66d3da86.css" debug="false" />
+
+
 
     <style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;padding-top:50%}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style>
 </head>
@@ -126,9 +123,9 @@
         }
 
     </style>
-    <form class="center-block indent-on-large-phone" data-form-token="JXGBLU" data-validate-url="/f/JXGBLU/field_validations" id="new_entry" action="https://nvmishu.jinshuju.com/f/JXGBLU" accept-charset="UTF-8" method="post">
-        <input name="utf8" type="hidden" value="✓" />
-        <input type="hidden" name="authenticity_token" value="4TL1DdHwDbLfqxA6qcHLKUFBJcsncZQyh1gHF/hCS4vOCiFOFoTFVFTqpOijtrLaA5T2Jwvrxbadjf85ARhvKg==" />
+    <form class="center-block indent-on-large-phone"  id="new_entry" action="{{ url('store') }}"  method="post">
+        {{ csrf_field() }}
+
         <div class="form-header">
             {{--<div class="banner font-family-heiti header-type-image">
                 <div class="banner-img">
@@ -165,38 +162,38 @@
                                 <label class="field-label font-family-inherit" for="entry_field_31"> &amp;省份： </label>
                             </div>
                             <div class="field-content">
-                                <div data-role="address" class="address " data-address-items="[&quot;province&quot;, &quot;city&quot;, &quot;district&quot;]">
+                                <div data-role="address" class="address ">
                                     <div class="address-selects">
                                         <div class="address-selects-inner" id="distpicker">
                                             <div class="dropdown-wrapper province-select-wrapper">
-                                                <select name="entry[field_31][province]" id="entry_field_31_province" class="needsclick field-transformed" data-role="province"></select>
+                                                <select name="province" id="entry_field_31_province" class="needsclick field-transformed" ></select>
                                                 <b class="dropdown-bg"></b>
                                                 <i class="dropdown-trigger"></i>
                                             </div>
                                             <div class="dropdown-wrapper city-select-wrapper">
-                                                <select name="entry[field_31][city]" id="entry_field_31_city" class="needsclick field-transformed" data-role="city"></select>
+                                                <select name="city" id="entry_field_31_city" class="needsclick field-transformed" ></select>
                                                 <b class="dropdown-bg"></b>
                                                 <i class="dropdown-trigger"></i>
                                             </div>
                                             <div class="dropdown-wrapper district-select-wrapper">
-                                                <select name="entry[field_31][district]" id="entry_field_31_district" class="needsclick field-transformed" data-role="district"></select>
+                                                <select name="area" id="entry_field_31_district" class="needsclick field-transformed" ></select>
                                                 <b class="dropdown-bg"></b>
                                                 <i class="dropdown-trigger"></i>
                                             </div>
                                         </div>
                                     </div>
-                                    <input type="text" name="entry[field_31][street]" id="entry_field_31_street" placeholder="详细地址" class="street-input fixed-width-control gd-input-xxlarge hide" />
+                                    {{--<input type="text" name="entry[field_31][street]" id="entry_field_31_street" placeholder="详细地址" class="street-input fixed-width-control gd-input-xxlarge hide" />--}}
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="field field-text-field col-sm-12 required" data-api-code="field_23" data-type="TextField" data-label="◆职业：" data-validations="[&quot;Presence&quot;]" data-field-type="text-field">
+                    <div class="field field-text-field col-sm-12 required" data-api-code="field_23" data-type="TextField" data-label="◆职业：" >
                         <div class="form-group">
                             <div class="field-label-container" onclick="">
                                 <label class="field-label font-family-inherit" for="entry_field_23"> ◆职业： </label>
                             </div>
                             <div class="field-content">
-                                <input type="text" name="entry[field_23]" id="entry_field_23" />
+                                <input type="text" name="occupation" id="entry_field_23" />
                             </div>
                         </div>
                     </div>
@@ -209,12 +206,12 @@
                                 <div class="choices inline  font-family-inherit" data-random-choices="false">
                                     <label onclick="" class="choice radio " data-choice-api-code="xZiP">
                                         <div class="radio-button-wrapper">
-                                            <input type="radio" value="xZiP" name="entry[field_6]" class="field-transformed" />
+                                            <input type="radio" value="1" name="sex" class="field-transformed" />
                                             <i class="selected-icon"></i>
                                         </div> <span class="choice-value quota-container">男 <span class="quota operand"></span> </span> </label>
                                     <label onclick="" class="choice radio " data-choice-api-code="Caf9">
                                         <div class="radio-button-wrapper">
-                                            <input type="radio" value="Caf9" name="entry[field_6]" class="field-transformed" />
+                                            <input type="radio" value="2" name="sex" class="field-transformed" />
                                             <i class="selected-icon"></i>
                                         </div> <span class="choice-value quota-container">女 <span class="quota operand"></span> </span> </label>
                                 </div>
@@ -231,19 +228,19 @@
                                     <p><span style="color:#808080;">请点击后上下划动，修改为您的生日；</span><span style="color:#daa520;">务必准确填写生日</span><span style="color:#808080;">，不然无法通过年龄段查询到您的信息。</span></p>
                                 </div>
                                 <div class="gd-input-container">
-                                    <input type="date" value="1986-06-06" placeholder="年-月-日"  min="" max="" class="input-with-icon transformed-date-input enhanced-input" data-role="date"  name="entry[field_30]" />
+                                    <input type="date" value="" placeholder="年-月-日"  min="" max="" class="input-with-icon transformed-date-input enhanced-input" data-role="date"  name="birthday" />
                                     <i class="gd-input-icon gd-icon-calendar"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="field field-text-field col-sm-12 required" data-api-code="field_26" data-type="TextField" data-label="#身高（cm）：" data-validations="[&quot;Presence&quot;]" data-field-type="text-field">
+                    <div class="field field-text-field col-sm-12 required" >
                         <div class="form-group">
                             <div class="field-label-container" onclick="">
                                 <label class="field-label font-family-inherit" for="entry_field_26"> #身高（cm）： </label>
                             </div>
                             <div class="field-content">
-                                <input type="text" value="" name="entry[field_26]" id="entry_field_26" />
+                                <input type="text" value="" name="height" />
                             </div>
                         </div>
                     </div>
@@ -259,36 +256,36 @@
                                 <div class="choices   font-family-inherit" data-random-choices="false">
                                     <label onclick="" class="choice radio " data-choice-api-code="9bmP">
                                         <div class="radio-button-wrapper">
-                                            <input type="radio" value="9bmP" name="entry[field_22]" class="field-transformed" />
+                                            <input type="radio" value="初中" name="education" class="field-transformed" />
                                             <i class="selected-icon"></i>
                                         </div> <span class="choice-value quota-container">初中 <span class="quota operand"></span> </span> </label>
                                     <label onclick="" class="choice radio " data-choice-api-code="Ib5B">
                                         <div class="radio-button-wrapper">
-                                            <input type="radio" value="Ib5B" name="entry[field_22]" class="field-transformed" />
+                                            <input type="radio" value="高中" name="education" class="field-transformed" />
                                             <i class="selected-icon"></i>
                                         </div> <span class="choice-value quota-container">高中 <span class="quota operand"></span> </span> </label>
-                                    <label onclick="" class="choice radio " data-choice-api-code="wVXN">
+                                    <label onclick="" class="choice radio " >
                                         <div class="radio-button-wrapper">
-                                            <input type="radio" value="wVXN" name="entry[field_22]" class="field-transformed" />
+                                            <input type="radio" value="专科" name="education" class="field-transformed" />
                                             <i class="selected-icon"></i>
                                         </div> <span class="choice-value quota-container">专科 <span class="quota operand"></span> </span> </label>
                                     <label onclick="" class="choice radio " data-choice-api-code="Dkcb">
                                         <div class="radio-button-wrapper">
-                                            <input type="radio" value="Dkcb" name="entry[field_22]" class="field-transformed" />
+                                            <input type="radio" value="本科" name="education" class="field-transformed" />
                                             <i class="selected-icon"></i>
                                         </div> <span class="choice-value quota-container">本科 <span class="quota operand"></span> </span> </label>
                                     <label onclick="" class="choice radio " data-choice-api-code="6Lkb">
                                         <div class="radio-button-wrapper">
-                                            <input type="radio" value="6Lkb" name="entry[field_22]" class="field-transformed" />
+                                            <input type="radio" value="硕士以上" name="education" class="field-transformed" />
                                             <i class="selected-icon"></i>
                                         </div> <span class="choice-value quota-container">硕士以上 <span class="quota operand"></span> </span> </label>
                                     <div class="other-choice choice ">
                                         <label onclick="" class="radio" data-choice-api-code="FnNP">
                                             <div class="radio-button-wrapper">
-                                                <input class="other_choice field-transformed" data-field-key="field_22" type="radio" value="FnNP" name="entry[field_22]" />
+                                                <input class="other_choice field-transformed" name="education" value="其他学历：" type="radio" id="qita_xueli"  />
                                                 <i class="selected-icon"></i>
                                             </div> <span class="choice-value quota-container">其他学历： <span class="quota operand"></span> </span> </label>
-                                        <input class="other-choice-input gd-input-medium gd-input-thin fixed-width-control" data-field-key="field_22" type="text" value="" name="entry[field_22_other]" id="entry_field_22_other" />
+                                        <input class="other-choice-input gd-input-medium gd-input-thin fixed-width-control" id="text_education_qita"  type="text" value="" name="education_qi"  />
                                     </div>
                                 </div>
                             </div>
@@ -300,7 +297,7 @@
                                 <label class="field-label font-family-inherit" for="entry_field_25"> ￥月收入（千）： </label>
                             </div>
                             <div class="field-content">
-                                <input type="text" value="" name="entry[field_25]" id="entry_field_25" />
+                                <input type="text" value="" name="monthly_income" id="entry_field_25" />
                             </div>
                         </div>
                     </div>
@@ -313,12 +310,12 @@
                                 <div class="choices   font-family-inherit" data-random-choices="false">
                                     <label onclick="" class="choice radio " data-choice-api-code="tw6f">
                                         <div class="radio-button-wrapper">
-                                            <input type="radio" value="tw6f" name="entry[field_24]" class="field-transformed" />
+                                            <input type="radio" value="0" name="marriage_history" class="field-transformed" />
                                             <i class="selected-icon"></i>
                                         </div> <span class="choice-value quota-container">无 <span class="quota operand"></span> </span> </label>
                                     <label onclick="" class="choice radio " data-choice-api-code="JCLm">
                                         <div class="radio-button-wrapper">
-                                            <input type="radio" value="JCLm" name="entry[field_24]" class="field-transformed" />
+                                            <input type="radio" value="1" name="marriage_history" class="field-transformed" />
                                             <i class="selected-icon"></i>
                                         </div> <span class="choice-value quota-container">有 <span class="quota operand"></span> </span> </label>
                                 </div>
@@ -334,7 +331,7 @@
                                 <div class="field-description clearfix">
                                     <p><span style="color:#808080;">参考项：性格/爱好/有无房车/家庭情况等，请注意标点符号，填空后自己检查下，对自己负责，也能让别人更好的了解你。</span></p>
                                 </div>
-                                <textarea rows="3" name="entry[field_28]" id="entry_field_28" style="overflow: hidden; overflow-wrap: break-word; height: 65px;"></textarea>
+                                <textarea rows="3" name="introduce" id="entry_field_28" style="overflow: hidden; overflow-wrap: break-word; height: 65px;"></textarea>
                             </div>
                         </div>
                     </div>
@@ -347,7 +344,7 @@
                                 <div class="field-description clearfix">
                                     <p><span style="color:#808080;">择偶要求，参考：性格/个人条件/是否接受外省会员追求等，请注意标点符号，填空后自己检查下，对自己负责，也能让别人更好的了解你。）</span></p>
                                 </div>
-                                <textarea rows="3" name="entry[field_29]" id="entry_field_29" style="overflow: hidden; overflow-wrap: break-word; height: 65px;"></textarea>
+                                <textarea rows="3" name="ideal" id="entry_field_29" style="overflow: hidden; overflow-wrap: break-word; height: 65px;"></textarea>
                             </div>
                         </div>
                     </div>
@@ -360,7 +357,7 @@
                                 <div class="field-description clearfix">
                                     <p><span style="color:#ff8c00;">请务必仔细填写并核对您的微信号（微信号/手机号/QQ号，以确保能添加和联系到您；如有其他会员对您有意，而无法联系到你，错过的是你的缘份）</span></p>
                                 </div>
-                                <input type="text" name="entry[field_13]" id="entry_field_13" />
+                                <input type="text" name="wechat" id="entry_field_13" />
                             </div>
                         </div>
                     </div>
@@ -374,28 +371,96 @@
                                     <p><span style="color:#daa520;">据说上传照片的更容易引起别人的注意哟^_^</span></p>
                                 </div>
                                 <div class="attachment-field">
-                                    <input type="file" name="entry_field_9_files" id="entry_field_9_files" class="jquery-file-upload-file-input" multiple="multiple" accept="*" data-token-url="/f/JXGBLU/qiniu_entry_tokens" data-callback-url="/f/JXGBLU/qiniu_entry_callbacks" data-max-size="5242880" data-origin-multiple="true" data-extensions="[]" />
-                                    <div class="attachments">
-                                        <div class="attachment clearfix gd-hide  " data-role="attachment">
-                                            <div class="progress-bar" role="progressbar" aria-valuenow="0" data-transitiongoal="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <input type="file" name="photo" id="photo" class="jquery-file-upload-file-input" multiple="multiple" accept="*"  data-max-size="5242880" data-origin-multiple="true" />
+                                    <div class="attachments attachments-1" style="display: none;">
+                                        <div class="attachment clearfix gd-hide uploaded" data-role="attachment" style="display: block;">
+
+                                            <div class="progress-bar progress-1" role="progressbar" aria-valuenow="0" data-transitiongoal="100" aria-valuemin="0" aria-valuemax="100" style="width: 0%; display: none;"></div>
+
                                             <div class="info clearfix">
-                                                <span class="preview-area pull-left"> <span class="preview"></span> </span>
-                                                <span class="status pull-left"> <span class="file-name"></span> <span class="file-size-status"> (<span class="file-size">0<span>Bytes</span></span>) </span> </span>
-                                                <span class="actions web-actions hide pull-right"> <label class="rechoose-link" data-role="rechoose" for="entry_field_9_files">重新选择</label> <span class="text-muted">|</span> <a data-role="cancel" class="delete-link" href="javascript:void(0)">删除</a> </span>
+                                                <span class="preview-area pull-left">
+                                                    <span class="preview">
+                                                        <img style="display: none" class="upload_img_1" src="">
+                                                    </span>
+                                                </span>
+                                                <span class="status pull-left">
+                                                  <span class="file-name" id="file-name-1">a.jpg</span>
+                                                  <span class="file-size-status">
+                                                    (<span class="file-size" id="file-size-1">491 KB</span>)
+                                                  </span>
+                                                </span>
+                                                <span class="actions web-actions pull-right">
+                                                    <label class="rechoose-link" data-role="rechoose" for="entry_field_9_files" onclick="again_upload(1)">重新选择</label> <span class="text-muted">|</span>
+                                                    <a data-role="cancel" class="delete-link" href="javascript:void(0)" onclick="upload_delete(1)">删除</a>
+                                              </span>
                                             </div>
-                                            <input data-role="attachment_id" multiple="multiple" type="hidden" name="entry[field_9][]" />
+                                            <input type="hidden" class="upload_file_1" name="file_1" value="0">
+                                            <input id="upload_input_1" multiple="multiple" type="hidden" name="photos[]" value="">
                                         </div>
                                     </div>
-                                    <div class="attachment-select-trigger" data-max-file-quantity="3">
-                                        <label for="entry_field_9_files">
+                                    <div class="attachments attachments-2" style="display: none;">
+                                        <div class="attachment clearfix gd-hide uploaded" data-role="attachment" style="display: block;">
+
+                                            <div class="progress-bar progress-2" role="progressbar" aria-valuenow="0" data-transitiongoal="100" aria-valuemin="0" aria-valuemax="100" style="width: 0%; display: none;"></div>
+
+                                            <div class="info clearfix">
+                                                <span class="preview-area pull-left">
+                                                    <span class="preview">
+                                                        <img style="display: none"  class="upload_img_2" src="">
+                                                    </span>
+                                                </span>
+                                                <span class="status pull-left">
+                                                  <span class="file-name" id="file-name-2">a.jpg</span>
+                                                  <span class="file-size-status">
+                                                    (<span class="file-size" id="file-size-2" >491 KB</span>)
+                                                  </span>
+                                                </span>
+                                                <span class="actions web-actions pull-right">
+                                                    <label class="rechoose-link" data-role="rechoose" for="entry_field_9_files" onclick="again_upload(2)">重新选择</label> <span class="text-muted">|</span>
+                                                    <a data-role="cancel" class="delete-link" href="javascript:void(0)" onclick="upload_delete(2)">删除</a>
+                                              </span>
+                                            </div>
+                                            <input type="hidden" class="upload_file_2" name="file_2" value="0">
+                                            <input id="upload_input_2" multiple="multiple" type="hidden" name="photos[]" value="">
+                                        </div>
+                                    </div>
+                                    <div class="attachments attachments-3" style="display: none;">
+                                        <div class="attachment clearfix gd-hide uploaded" data-role="attachment" style="display: block;">
+
+                                            <div class="progress-bar progress-3" role="progressbar" aria-valuenow="0" data-transitiongoal="100" aria-valuemin="0" aria-valuemax="100" style="width: 0%; display: none;"></div>
+
+                                            <div class="info clearfix">
+                                                <span class="preview-area pull-left">
+                                                    <span class="preview">
+                                                        <img style="display: none"  class="upload_img_3" src="">
+                                                    </span>
+                                                </span>
+                                                <span class="status pull-left">
+                                                  <span class="file-name" id="file-name-3">a.jpg</span>
+                                                  <span class="file-size-status">
+                                                    (<span class="file-size" id="file-size-3">491 KB</span>)
+                                                  </span>
+                                                </span>
+                                                <span class="actions web-actions pull-right">
+                                                    <label class="rechoose-link" data-role="rechoose" for="entry_field_9_files" onclick="again_upload(3)">重新选择</label> <span class="text-muted">|</span>
+                                                    <a data-role="cancel" class="delete-link" href="javascript:void(0)" onclick="upload_delete(3)">删除</a>
+                                              </span>
+                                            </div>
+                                            <input type="hidden" class="upload_file_3" name="file_3" value="0">
+                                            <input id="upload_input_3" multiple="multiple" type="hidden" name="photos[]" value="">
+                                        </div>
+                                    </div>
+                                    <div class="attachment-select-trigger">
+                                        <label for="photo">
                                             <div class="plus">
                                                 +
                                             </div>
                                             <div class="select-text-wrapper">
                                                 <div class="select-text">
-                                                    请选择或拖拽上传文件（最多3个）、限制每个5.0MB以内。
+                                                    点此选择上传照片（最多3个）、限制每个5.0MB以内。
                                                 </div>
-                                            </div></label>
+                                            </div>
+                                        </label>
                                     </div>
                                     <div class="attachment-error-message"></div>
                                 </div>
@@ -467,62 +532,256 @@
                         </div>
                     </div>
                 </div>--}}
+
                 <div class="field submit-field col-md-12 clearfix payment">
                     <a class="pagination-action previous-page hide gd-btn gd-btn-primary-solid font-family-inherit" href="javascript:void(0)">上一页</a>
                     <a class="pagination-action next-page hide gd-btn gd-btn-primary-solid font-family-inherit" href="javascript:void(0)">下一页</a>
                     <input type="submit" name="commit" value="提交资料♡邂逅爱情" data-disabled-with="提交中..." class="submit gd-btn gd-btn-primary-solid font-family-inherit" />
-                    <span class="page-number text-muted"></span>
-                    <span class="report-link-placeholder gd-form-control-line-height" data-url="/f/JXGBLU/report_link"> </span>
-                    <input type="hidden" name="embedded" id="embedded" />
-                    <input type="hidden" name="banner" id="banner" />
-                    <input type="hidden" name="background" id="background" />
-                    <input type="hidden" name="wxt" id="wxt" />
-                    <input type="hidden" name="code" id="code" />
+
                 </div>
             </div>
         </div>
     </form>
-    <div id="form_page_error_messages_modal" class="modal warning form-error-messages-modal " tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-                    <h4 class="modal-title">错误提醒</h4>
-                </div>
-                <div class="modal-body clearfix">
-                    <div class="error-explanation">
-                        <h5>提交未成功，当前页面填写有错误！</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <footer class="published text-center">
-    </footer>
+
 </div>
+
 <script src="http://www.jq22.com/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
 <script src="/js/distpicker.data.js"></script>
 <script src="/js/distpicker.js"></script>
 <script src="/js/main.js"></script>
+<script src="/layer_mobile/layer.js"></script>
 <script>
+    var submit_bool = true;
+    var submit_message = "";
 
-    $(function() {
-        $('.top-warning').delay(1000).slideDown(500);
-    });
+
     $("#distpicker").distpicker({
         autoSelect: false
     });
 
-</script>
-<script>
+    $("#qita_xueli").click(function(){
+        $("#text_education_qita").focus();
+    });
+    function message($msg){
+        layer.open({
+            content: $msg
+            ,skin: 'msg'
+            ,time: 3 //2秒后自动关闭
+        });
+    }
+    $("#new_entry").submit(function(){
+        if(submit_bool === false){
+            message(submit_message);return false;
+        }
+        if(!$("select[name='province']").val()){
+            message("请填写省份");return false;
+        }
+        if(!$("select[name='city']").val()){
+            message("请填写城市");return false;
+        }
+        if(!$("select[name='area']").val()){
+            message("请填写地区");return false;
+        }
+        if(!$("input[name='occupation']").val()){
+            message("请填写职业");return false;
+        }
+        if(!$("input[name='sex']").val()){
+            message("请选择性别");return false;
+        }
+        if(!$("input[name='birthday']").val()){
+            message("请填写生日");return false;
+        }
+        if(!$("input[name='height']").val()){
+            message("请填写身高");return false;
+        }
+        if(!$("input[name='education']").val()){
+            message("请填写学历");return false;
+        }
+        if(!$("input[name='monthly_income']").val()){
+            message("请填写收入");return false;
+        }
+        if(!$("input[name='marriage_history']").val()){
+            message("请选择有无婚史");return false;
+        }
+        if(!$("textarea[name='introduce']").val()){
+            message("请填写介绍");return false;
+        }
+        if(!$("textarea[name='ideal']").val()){
+            message("请填写理想中的Ta");return false;
+        }
+        if(!$("input[name='wechat']").val()){
+            message("请填写微信号");return false;
+        }
+        if(!submit_message){
+            message(submit_message);return false;
+        }
 
-    var calendardatetime = new lCalendar();
-    calendardatetime.init({
-        'trigger': '#bt_date',
-        'type': 'datetime'
+        layer.open({type: 2});
+
+        $.ajax({
+            type: "post",
+            url: "{{ url('store') }}",
+            data: $("#new_entry").serialize(), // 序列化form表单里面的数据传到后台
+            dataType: "json", // 指定后台传过来的数据是json格式
+            success: function(data){
+                layer.closeAll();
+                if (data.code == 200) {
+                    message("提交成功");
+
+                } else {
+                    message(data.message);
+                }
+                location.reload();
+            },
+            error: function(err){
+                message("数据异常！");
+            }
+        })
+
+
+        return false;
+    });
+
+    var esq;
+    function again_upload(index){
+        $("#photo").click();
+        esq = index;
+    }
+
+    $("#photo").change(function(){
+        var file = $('#photo').get(0).files[0];
+        if (file) {
+            var fileSize = 0;
+            if (file.size > 1024 * 1024) fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100).toString() + 'MB';
+            else fileSize = (Math.round(file.size * 100 / 1024) / 100).toString() + 'KB';
+            eq = esq;
+
+            if(!eq){
+                if($("input[name='file_1']").val() == 0){
+                    eq = 1;
+                }else if($("input[name='file_2']").val() == 0){
+                    eq = 2;
+                }else if($("input[name='file_3']").val() == 0){
+                    eq = 3;
+                }else{
+                    var eq;
+                    message("最多只能上传三张照片哦！");return false;
+                }
+            }else{
+                $(".upload_img_"+eq).hide();
+            }
+
+
+            $(".attachments-"+eq).show();
+            $(".progress-"+eq).show();
+            $("#file-name-"+eq).text(file.name.substring(0,10));
+            $("#file-size-"+eq).text(fileSize);
+            $(".upload_file_"+eq).val("1");
+
+        }
+
+
+        var formData = new FormData();
+        formData.append("photo",$("#photo")[0].files[0]);
+        formData.append("_token","{{ csrf_token() }}");
+        submit_message = "请稍等，照片还在上传中~";
+        submit_bool = false;
+        $.ajax({
+            url:'{{ url('/image/upload') }}', /*接口域名地址*/
+            type:'post',
+            data: formData,
+            contentType: false,
+            processData: false,
+            xhr: function () {
+                //获取xmlhttprequest对象或者ActiveXObject 对象，jquery中封装好的。
+                var xhr = $.ajaxSettings.xhr();
+                if (xhr.upload) {
+                    if(eq==1){
+                        xhr.upload.addEventListener("progress", progress1, false);
+                    }else if(eq==2){
+                        xhr.upload.addEventListener("progress", progress2, false);
+                    }else if(eq==3){
+                        xhr.upload.addEventListener("progress", progress3, false);
+                    }
+
+                }
+                return xhr;
+
+            },
+            success:function(res){
+                $(".progress-"+eq).hide();
+                submit_message = "";
+                submit_bool = true;
+                if(res.code == 200){
+                    $(".upload_img_"+eq).show();
+                    $("#upload_input_"+eq).val(res.img);
+                    $(".upload_img_"+eq).attr("src",res.img);
+                }else{
+                    message("上传失败，请重新上传~");
+                    upload_delete(eq);
+                }
+
+            }
+        })
+    });
+    function uploadImg(element, tag) {
+        var file = tag.files[0];
+        var imgSrc;
+        if (!/image\/\w+/.test(file.type)) {
+            message("请上传图片格式");
+            return false;
+        }
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+
+        reader.onload = function() {
+            console.log(this.result);
+            imgSrc = this.result;
+            var imgs = document.createElement("img");
+            $(imgs).attr("src", imgSrc);
+            element.append(imgs);
+        };
+    }
+
+    function progress1(evt){
+        progressBar(evt,1);
+    }
+    function progress2(evt){
+        progressBar(evt,2);
+    }
+    function progress3(evt){
+        progressBar(evt,3);
+    }
+
+    function progressBar(evt,eq) {
+        if(!eq){
+            return false;
+        }
+        var loaded = evt.loaded; //已经上传大小情况
+        var tot = evt.total; //附件总大小
+        var per = Math.floor(100 * loaded / tot); //已经上传的百分比
+        $(".progress-"+eq).width(per + "%");
+    }
+
+    function upload_delete(eq){
+        $("input[name='photo']").val("");
+        $(".attachments-"+eq).hide();
+        $(".progress-"+eq).hide();
+        $("#file-name-"+eq).text("");
+        $("#file-size-"+eq).text("");
+        $(".upload_file_"+eq).val("0");
+        $(".upload_img_"+eq).hide();
+        $("#upload_input_"+eq).val("");
+        $(".upload_img_"+eq).attr("src","");
+    }
+
+    $(function() {
+        $('.top-warning').delay(1000).slideDown(500);
+
     });
 
 </script>
+
 </body>
 </html>
