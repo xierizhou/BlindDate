@@ -89,7 +89,7 @@ class IndexController extends Controller
 
                 //判断是否上传成功
                 if($bool){
-                    return response()->json(['code'=>200,'img'=>'/uploads'.$filename."_30x30.".$ext]);
+                    return response()->json(['code'=>200,'input_img'=>'/uploads'.$filename,'img'=>'/uploads'.$filename."_30x30.".$ext]);
                 }else{
                     return response()->json(['code'=>400,'message'=>'上传失败！']);
                 }

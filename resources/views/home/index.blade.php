@@ -715,7 +715,7 @@
                 submit_bool = true;
                 if(res.code == 200){
                     $(".upload_img_"+eq).show();
-                    $("#upload_input_"+eq).val(res.img);
+                    $("#upload_input_"+eq).val(res.input_img);
                     $(".upload_img_"+eq).attr("src",res.img);
                 }else{
                     message("上传失败，请重新上传~");
