@@ -11,6 +11,7 @@
     <meta property="og:description" content="为同城单身找对象✡登记表提交数据。&amp;lt;p&amp;gt;&amp;lt;span style=&amp;quot;color:#808080&amp;quot;&amp;gt;&amp;lt;strong&amp;gt;介绍：&amp;lt;/str..." />
     <meta property="og:image" content="https://pub-files.jinshuju.com/MvyQeJ/THIpQ7/wti/20181212195415_61e65f@wtinormal" />
     {{--<link rel="shortcut icon" type="image/x-icon" href="https://assets.jinshuju.com/assets/favicon-98b9708694b169dabcdb977769c39c3d56356e7b8f79495f32b0e6bdf53579f4.ico" />--}}
+    <link rel="stylesheet" href="/css/lCalendar.css">
     <link rel="stylesheet" media="screen" href="/module_registration/published-ca7f11682788968099afb9045dc7502e65da50572f5a0feb9b22db0b66d3da86.css" debug="false" />
     <style type="text/css">
 
