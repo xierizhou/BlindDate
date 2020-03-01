@@ -230,7 +230,7 @@
                                     <p><span style="color:#808080;">请点击后上下划动，修改为您的生日；</span><span style="color:#daa520;">务必准确填写生日</span><span style="color:#808080;">，不然无法通过年龄段查询到您的信息。</span></p>
                                 </div>
                                 <div class="gd-input-container">
-                                    <input type="text" value="1986-06-06" placeholder="年-月-日" discard_day="true" min="" max="" class="input-with-icon transformed-date-input enhanced-input" data-role="date" data-date-start-date="" data-date-end-date="" data-date-format="yyyy-mm-dd" data-date-mode="days" data-icon="gd-icon-calendar" name="entry[field_30]" id="entry_field_30" />
+                                    <input type="text" value="1986-06-06" placeholder="年-月-日" discard_day="true" min="" max="" class="input-with-icon transformed-date-input enhanced-input" data-role="date" data-date-start-date="" data-date-end-date="" data-date-format="yyyy-mm-dd" data-date-mode="days" data-icon="gd-icon-calendar" name="entry[field_30]" id="bt_date" />
                                     <i class="gd-input-icon gd-icon-calendar"></i>
                                 </div>
                             </div>
@@ -511,6 +511,15 @@
     });
     $("#distpicker").distpicker({
         autoSelect: false
+    });
+
+</script>
+<script>
+
+    var calendardatetime = new lCalendar();
+    calendardatetime.init({
+        'trigger': '#bt_date',
+        'type': 'datetime'
     });
 
 </script>
