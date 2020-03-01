@@ -11,9 +11,11 @@
     <meta property="og:description" content="为同城单身找对象✡登记表提交数据。&amp;lt;p&amp;gt;&amp;lt;span style=&amp;quot;color:#808080&amp;quot;&amp;gt;&amp;lt;strong&amp;gt;介绍：&amp;lt;/str..." />
     <meta property="og:image" content="https://pub-files.jinshuju.com/MvyQeJ/THIpQ7/wti/20181212195415_61e65f@wtinormal" />
     {{--<link rel="shortcut icon" type="image/x-icon" href="https://assets.jinshuju.com/assets/favicon-98b9708694b169dabcdb977769c39c3d56356e7b8f79495f32b0e6bdf53579f4.ico" />--}}
-
+    <link rel="stylesheet" type="text/css" href="/css/swiper_app.css"/>
     <link rel="stylesheet" media="screen" href="/module_registration/published-ca7f11682788968099afb9045dc7502e65da50572f5a0feb9b22db0b66d3da86.css" debug="false" />
 
+    <link rel="stylesheet" type="text/css" href="/css/swiper.min.css"/>
+    <script type="text/javascript" src="/js/swiper.min.js"></script>
 
 
     <style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;padding-top:50%}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style>
@@ -380,7 +382,7 @@
                                             <div class="info clearfix">
                                                 <span class="preview-area pull-left">
                                                     <span class="preview">
-                                                        <img style="display: none" class="upload_img_1" src="">
+                                                        <img style="display: none" id="upload_img" class="upload_img_1" src="">
                                                     </span>
                                                 </span>
                                                 <span class="status pull-left">
@@ -406,7 +408,7 @@
                                             <div class="info clearfix">
                                                 <span class="preview-area pull-left">
                                                     <span class="preview">
-                                                        <img style="display: none"  class="upload_img_2" src="">
+                                                        <img style="display: none" id="upload_img" class="upload_img_2" src="">
                                                     </span>
                                                 </span>
                                                 <span class="status pull-left">
@@ -432,7 +434,7 @@
                                             <div class="info clearfix">
                                                 <span class="preview-area pull-left">
                                                     <span class="preview">
-                                                        <img style="display: none"  class="upload_img_3" src="">
+                                                        <img style="display: none" id="upload_img" class="upload_img_3" src="">
                                                     </span>
                                                 </span>
                                                 <span class="status pull-left">
@@ -536,7 +538,7 @@
                 <div class="field submit-field col-md-12 clearfix payment">
                     <a class="pagination-action previous-page hide gd-btn gd-btn-primary-solid font-family-inherit" href="javascript:void(0)">上一页</a>
                     <a class="pagination-action next-page hide gd-btn gd-btn-primary-solid font-family-inherit" href="javascript:void(0)">下一页</a>
-                    <input type="submit" name="commit" value="提交资料♡邂逅爱情" data-disabled-with="提交中..." class="submit gd-btn gd-btn-primary-solid font-family-inherit" />
+                    <input style="height:38px;width:100%;" type="submit" name="commit" value="提交资料♡邂逅爱情" data-disabled-with="提交中..." class="submit gd-btn gd-btn-primary-solid font-family-inherit" />
 
                 </div>
             </div>
@@ -544,7 +546,11 @@
     </form>
 
 </div>
-
+<div class="big_img">
+    <div class="swiper-container2">
+        <div class="swiper-wrapper"> </div>
+    </div>
+</div>
 <script src="http://www.jq22.com/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
 <script src="/js/distpicker.data.js"></script>
@@ -781,6 +787,45 @@
 
     $(function() {
         $('.top-warning').delay(1000).slideDown(500);
+
+        /*调起大图 S*/
+        var mySwiper = new Swiper('.swiper-container2', {
+            loop: false,
+            pagination: '.swiper-pagination2',
+        })
+        $(".upload_img_1").click(function(){
+            $('.swiper-wrapper').html("");
+            show_img($("#upload_input_1").val());
+        });
+        $(".upload_img_2").click(function(){
+            $('.swiper-wrapper').html("");
+            show_img($("#upload_input_2").val());
+        });
+        $(".upload_img_3").click(function(){
+            $('.swiper-wrapper').html("");
+            show_img($("#upload_input_3").val());
+        });
+
+        function show_img(img_src){
+            $(".big_img .swiper-wrapper").append('<div class="swiper-slide"><div class="cell"><img src="' + img_src + '" / ></div></div>');
+            mySwiper.updateSlidesSize();
+            mySwiper.updatePagination();
+            $(".big_img").css({
+                "z-index": 1001,
+                "opacity": "1"
+            });
+            mySwiper.slideTo(0, 0, false);
+            return false;
+        }
+
+        $(".big_img").on("click",
+            function() {
+                $(this).css({
+                    "z-index": "-1",
+                    "opacity": "0"
+                });
+
+            });
 
     });
 
