@@ -453,7 +453,7 @@
                                         </div>
                                     </div>
                                     <div class="attachment-select-trigger">
-                                        <label for="photo">
+                                        <label id="photo_label">
                                             <div class="plus">
                                                 +
                                             </div>
@@ -655,7 +655,16 @@
         $("#photo").click();
         esq = index;
     }
-
+    $("#photo_label").click(function(){
+        if($("input[name='file_1']").val() == 0){
+        }else if($("input[name='file_2']").val() == 0){
+        }else if($("input[name='file_3']").val() == 0){
+        }else{
+            var eq;
+            message("最多只能上传三张照片哦！");return false;
+        }
+        $("#photo").click();
+    });
     $("#photo").change(function(){
         var file = $('#photo').get(0).files[0];
         if (file) {
