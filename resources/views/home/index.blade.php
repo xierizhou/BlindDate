@@ -630,7 +630,10 @@
                 } else {
                     message(data.message);
                 }
-                location.reload();
+                setTimeout(function(){
+                    location.reload();
+                },2000);
+
             },
             error: function(err){
                 message("数据异常！");
