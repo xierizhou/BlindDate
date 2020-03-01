@@ -710,7 +710,9 @@
 
             },
             success:function(res){
-                $(".progress-"+eq).hide();
+                setTimeout(function(){
+                    $(".progress-"+eq).hide();
+                },1500);
                 submit_message = "";
                 submit_bool = true;
                 if(res.code == 200){

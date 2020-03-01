@@ -8,6 +8,7 @@ use App\Models\Means;
 use App\Models\MeansPhoto;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Image;
 class IndexController extends Controller
 {
     public function index(){
@@ -69,24 +70,33 @@ class IndexController extends Controller
      */
     public function upload(Request $request){
         $file = $request->file('photo');
-        //判断文件是否上传成功
-        if ($file->isValid()){
-            //原文件名
-            $originalName = $file->getClientOriginalName();
-            //扩展名
-            $ext = $file->getClientOriginalExtension();
-            //MimeType
-            $type = $file->getClientMimeType();
-            //临时绝对路径
-            $realPath = $file->getRealPath();
-            $filename = '/means/'.date('Ymd').uniqid().'.'.$ext;
-            $bool = Storage::disk('uploads')->put($filename,file_get_contents($realPath));
-            //判断是否上传成功
-            if($bool){
-                return response()->json(['code'=>200,'img'=>'/uploads'.$filename]);
-            }else{
-                return response()->json(['code'=>400,'message'=>'上传失败！']);
+        try{
+            //判断文件是否上传成功
+            if ($file->isValid()){
+                //原文件名
+                $originalName = $file->getClientOriginalName();
+                //扩展名
+                $ext = $file->getClientOriginalExtension();
+                //MimeType
+                $type = $file->getClientMimeType();
+                //临时绝对路径
+                $realPath = $file->getRealPath();
+
+
+                $filename = '/means/'.date('Ymd').uniqid().'.'.$ext;
+                $bool = Storage::disk('uploads')->put($filename,file_get_contents($realPath));
+                Image::make($file)->resize(30,30)->save(public_path('/uploads'.$filename."_30x30.".$ext));//压缩并保存照片
+
+                //判断是否上传成功
+                if($bool){
+                    return response()->json(['code'=>200,'img'=>'/uploads'.$filename."_30x30.".$ext]);
+                }else{
+                    return response()->json(['code'=>400,'message'=>'上传失败！']);
+                }
             }
+        }catch (\Exception $exception){
+            return response()->json(['code'=>400,'message'=>'上传失败！']);
         }
+
     }
 }
