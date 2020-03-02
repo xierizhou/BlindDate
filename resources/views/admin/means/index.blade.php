@@ -99,7 +99,7 @@
                                         <td>{{ $item->ideal }}</td>
                                         <td>{{ $item->wechat }}</td>
                                         <td>
-                                            <div id="layer-photos">
+                                            <div class="layer-photos">
                                                 @foreach($item->photos as $vv)
                                                     <img layer-src="{{ $vv->img }}" src="{{ $vv->img."_50x50.".substr(strrchr($vv->img, '.'), 1) }}" style="width:50px;height:50px;" alt="">
                                                 @endforeach
@@ -131,7 +131,7 @@
             var laydate = layui.laydate;
             var layer = layui.layer;
             layer.photos({
-                photos: '#layer-photos'
+                photos: '.layer-photos'
                 ,shift: 5 //0-6的选择，指定弹出图片动画类型，默认随机
             });
             //执行一个laydate实例
