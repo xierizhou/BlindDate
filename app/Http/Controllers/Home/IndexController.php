@@ -23,6 +23,7 @@ class IndexController extends Controller
         try{
             DB::transaction(function () use($request) {
                 $means = Means::create([
+                    'nickname'=>$request->nickname,
                     'province' => $request->province,
                     'city' => $request->city,
                     'area' => $request->area,

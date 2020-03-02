@@ -3,12 +3,12 @@
 <html data-embedded="" style="visibility: visible;" class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths tablesaw-enhanced">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>同城单身找对象✡登记表</title>
+    <title>单身征婚✡登记表</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="为同城单身找对象✡登记表提交数据。&amp;lt;p&amp;gt;&amp;lt;span style=&amp;quot;color:#808080&amp;quot;&amp;gt;&amp;lt;strong&amp;gt;介绍：&amp;lt;/str..." />
-    <meta property="og:title" content="同城单身找对象✡登记表" />
-    <meta property="og:description" content="为同城单身找对象✡登记表提交数据。&amp;lt;p&amp;gt;&amp;lt;span style=&amp;quot;color:#808080&amp;quot;&amp;gt;&amp;lt;strong&amp;gt;介绍：&amp;lt;/str..." />
+    <meta name="description" content="单身征婚✡登记表提交数据。&amp;lt;p&amp;gt;&amp;lt;span style=&amp;quot;color:#808080&amp;quot;&amp;gt;&amp;lt;strong&amp;gt;介绍：&amp;lt;/str..." />
+    <meta property="og:title" content="单身征婚✡登记表" />
+    <meta property="og:description" content="单身征婚✡登记表提交数据。&amp;lt;p&amp;gt;&amp;lt;span style=&amp;quot;color:#808080&amp;quot;&amp;gt;&amp;lt;strong&amp;gt;介绍：&amp;lt;/str..." />
     <meta property="og:image" content="https://pub-files.jinshuju.com/MvyQeJ/THIpQ7/wti/20181212195415_61e65f@wtinormal" />
     {{--<link rel="shortcut icon" type="image/x-icon" href="https://assets.jinshuju.com/assets/favicon-98b9708694b169dabcdb977769c39c3d56356e7b8f79495f32b0e6bdf53579f4.ico" />--}}
     <link rel="stylesheet" type="text/css" href="/css/swiper_app.css"/>
@@ -135,7 +135,7 @@
                 </div>
             </div>--}}
             <div class="container-fluid">
-                <h1 class="form-title font-family-inherit"> 同城单身找对象✡登记表 </h1>
+                <h1 class="form-title font-family-inherit"> 单身征婚✡登记表 </h1>
                 {{--<div class="form-description">
                     <p><span style="color:#808080"><strong>介绍：</strong>为了给同城群的单身朋友提供一个纯粹相亲交友平台，让单身朋友用最少的成本来更高效地脱单，我们提供了单身相亲社群服务，愿每一位想真诚寻找缘份的朋友都能找到心仪的他/她。</span></p>
                     <p><span style="color:#808080"><strong>流程：</strong>填表--》付款--》--成功登记后，跳转添加管理微信号lswen1888》获取后续服务：审核登记、获取会员库、进群、公众号留言推荐、牵线等。</span></p>
@@ -158,6 +158,51 @@
                     <div data-field-api-code="field_21" data-item-api-code="6mVU" data-inventory="581" data-inventory-text="库存 581 件"></div>
                 </div>
                 <div class="fields clearfix">
+
+                    <div class="field field-text-field col-sm-12 required" data-api-code="field_23" data-type="TextField" data-label="◆职业：" >
+                        <div class="form-group">
+                            <div class="field-label-container" onclick="">
+                                <label class="field-label font-family-inherit" for="entry_field_23"> ◆姓名： </label>
+                            </div>
+                            <div class="field-content">
+                                <input type="text" name="nickname" id="entry_field_23" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field field-radio-button col-sm-12 required" data-api-code="field_6" data-type="RadioButton" data-label="♀性别：" data-validations="[&quot;Presence&quot;]" data-field-type="radio-button">
+                        <div class="form-group">
+                            <div class="field-label-container" onclick="">
+                                <label class="field-label font-family-inherit" for="entry_field_6"> ♀性别： </label>
+                            </div>
+                            <div class="field-content">
+                                <div class="choices inline  font-family-inherit" data-random-choices="false">
+                                    <label onclick="" class="choice radio " data-choice-api-code="xZiP">
+                                        <div class="radio-button-wrapper">
+                                            <input type="radio" value="1" name="sex" class="field-transformed" />
+                                            <i class="selected-icon"></i>
+                                        </div> <span class="choice-value quota-container">男 <span class="quota operand"></span> </span> </label>
+                                    <label onclick="" class="choice radio " data-choice-api-code="Caf9">
+                                        <div class="radio-button-wrapper">
+                                            <input type="radio" value="2" name="sex" class="field-transformed" />
+                                            <i class="selected-icon"></i>
+                                        </div> <span class="choice-value quota-container">女 <span class="quota operand"></span> </span> </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field field-text-field col-sm-12 required" data-api-code="field_23" data-type="TextField" data-label="◆职业：" >
+                        <div class="form-group">
+                            <div class="field-label-container" onclick="">
+                                <label class="field-label font-family-inherit" for="entry_field_23"> ◆职业： </label>
+                            </div>
+                            <div class="field-content">
+                                <input type="text" name="occupation" id="entry_field_23" />
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="field field-address-field col-sm-12 required" data-api-code="field_31" data-type="AddressField" data-label="&amp;省份：" data-validations="[&quot;Presence&quot;]" data-field-type="address-field">
                         <div class="form-group">
                             <div class="field-label-container" onclick="">
@@ -189,37 +234,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="field field-text-field col-sm-12 required" data-api-code="field_23" data-type="TextField" data-label="◆职业：" >
-                        <div class="form-group">
-                            <div class="field-label-container" onclick="">
-                                <label class="field-label font-family-inherit" for="entry_field_23"> ◆职业： </label>
-                            </div>
-                            <div class="field-content">
-                                <input type="text" name="occupation" id="entry_field_23" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="field field-radio-button col-sm-12 required" data-api-code="field_6" data-type="RadioButton" data-label="♀性别：" data-validations="[&quot;Presence&quot;]" data-field-type="radio-button">
-                        <div class="form-group">
-                            <div class="field-label-container" onclick="">
-                                <label class="field-label font-family-inherit" for="entry_field_6"> ♀性别： </label>
-                            </div>
-                            <div class="field-content">
-                                <div class="choices inline  font-family-inherit" data-random-choices="false">
-                                    <label onclick="" class="choice radio " data-choice-api-code="xZiP">
-                                        <div class="radio-button-wrapper">
-                                            <input type="radio" value="1" name="sex" class="field-transformed" />
-                                            <i class="selected-icon"></i>
-                                        </div> <span class="choice-value quota-container">男 <span class="quota operand"></span> </span> </label>
-                                    <label onclick="" class="choice radio " data-choice-api-code="Caf9">
-                                        <div class="radio-button-wrapper">
-                                            <input type="radio" value="2" name="sex" class="field-transformed" />
-                                            <i class="selected-icon"></i>
-                                        </div> <span class="choice-value quota-container">女 <span class="quota operand"></span> </span> </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+
                     <div class="field field-date-field col-sm-12 required" data-api-code="field_30" data-type="DateField" data-label="♫生日：" data-validations="[&quot;Presence&quot;]" data-field-type="date-field">
                         <div class="form-group">
                             <div class="field-label-container" onclick="">
