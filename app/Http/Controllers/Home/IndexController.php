@@ -57,6 +57,7 @@ class IndexController extends Controller
             });
             return response()->json(['code'=>200,'message'=>'提交成功']);
         }catch (\Exception $exception){
+            
             return response()->json(['code'=>400,'message'=>'系统异常！','error_message'=>$exception->getMessage()]);
         }
 
