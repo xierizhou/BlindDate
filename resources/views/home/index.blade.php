@@ -651,13 +651,14 @@
                 layer.closeAll();
                 if (data.code == 200) {
                     message("提交成功");
+                    setTimeout(function(){
+                        location.reload();
+                    },2000);
 
                 } else {
                     message(data.message);
                 }
-                setTimeout(function(){
-                    location.reload();
-                },2000);
+
 
             },
             error: function(err){
