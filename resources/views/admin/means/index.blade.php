@@ -82,9 +82,8 @@
                                         <td>{{ ++$kk }}</td>
                                         <td>{{ $item->nickname }}</td>
                                         <td>
-                                            地区：{{ $item->province }}{{ $item->city }}{{ $item->area }} <br />
-
                                             性别：{{ $item->sex==1?"男":"女" }}<br />
+                                            地区：{{ $item->province }}{{ $item->city }}{{ $item->area }} <br />
                                             生日：{{ $item->birthday }}<br />
                                             身高：{{ $item->height }}<br />
                                         </td>
