@@ -1,17 +1,21 @@
 @extends('admin.app')
-@section('title', '应用列表')
+@section('title', '资料库')
 @section('content')
-    
+    <style>
+        .layui-table td, .layui-table th{
+            min-width: 10px;
+        }
+    </style>
     <body>
-        {{--<div class="x-nav">
+        <div class="x-nav">
             <span class="layui-breadcrumb">
                 <a href="">首页</a>
-                <a><cite>应用列表</cite></a>
+                <a><cite>资料库</cite></a>
             </span>
             <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" onclick="location.reload()" title="刷新">
                 <i class="layui-icon layui-icon-refresh" style="line-height:30px"></i>
             </a>
-        </div>--}}
+        </div>
         <div class="layui-fluid">
             <div class="layui-row layui-col-space15">
                 <div class="layui-col-md12">
@@ -59,44 +63,55 @@
                             <table class="layui-table layui-form">
                                 <thead>
                                     <tr>
-                                        <th>序号</th>
-                                        <th>地区</th>
-                                        <th>职业</th>
-                                        <th>性别</th>
-                                        <th>生日</th>
-                                        <th>身高</th>
-                                        <th>学历</th>
-                                        <th>月收入</th>
-                                        <th>有无婚史</th>
+                                        <th style="width: 20px;">序号</th>
+                                        <th style="width: 200px;">基本信息1</th>
+                                        <th style="width: 200px;">基本信息2</th>
                                         <th>介绍</th>
                                         <th>理想中的Ta</th>
                                         <th>微信号</th>
-                                        <th>提交时间</th>
-                                        <th>操作</th></tr>
+                                        <th>照片</th>
+                                        <th style="width: 150px;">提交时间</th>
+                                        {{--<th>操作</th>--}}
+                                    </tr>
                                 </thead>
                                 <tbody>
 
                                 @foreach($data as $kk=>$item)
                                     <tr>
                                         <td>{{ ++$kk }}</td>
-                                        <td>{{ $item->province }}{{ $item->city }}{{ $item->area }}</td>
-                                        <td>{{ $item->occupation }}</td>
-                                        <td>{{ $item->sex==1?"男":"女" }}</td>
-                                        <td>{{ $item->birthday }}</td>
-                                        <td>{{ $item->height }}</td>
-                                        <td>{{ $item->education }}</td>
-                                        <td>{{ $item->monthly_income }}</td>
-                                        <td>{{ $item->marriage_history==1?"有":"无" }}</td>
+                                        <td>
+                                            地区：{{ $item->province }}{{ $item->city }}{{ $item->area }} <br />
+
+                                            性别：{{ $item->sex==1?"男":"女" }}<br />
+                                            生日：{{ $item->birthday }}<br />
+                                            身高：{{ $item->height }}<br />
+                                        </td>
+
+                                        <td>
+                                            学历：{{ $item->education }}<br />
+                                            职业：{{ $item->occupation }} <br />
+                                            收入：{{ $item->monthly_income }}<br />
+                                            婚史：{{ $item->marriage_history==1?"有":"无" }}<br />
+                                        </td>
+
                                         <td>{{ $item->introduce }}</td>
                                         <td>{{ $item->ideal }}</td>
                                         <td>{{ $item->wechat }}</td>
-                                        <td>{{ $item->created_at }}</td>
-                                        <td class="td-manage">
-                                            {{--<a title="下载" onclick="xadmin.open('编辑','{{ url('admin/channel/'.$item->id.'/edit') }}',800,600)" href="javascript:;"><i class="icon iconfont">&#xe714;</i></a>--}}
-                                            <a title="查看" onclick="xadmin.open('编辑','{{ url('admin/channel/'.$item->id.'/edit') }}',800,600)" href="javascript:;"><i class="layui-icon">&#xe63c;</i></a>
+                                        <td>
+                                            <div id="layer-photos">
+                                                @foreach($item->photos as $vv)
+                                                    <img layer-src="{{ $vv->img }}" src="{{ $vv->img."_50x50.".substr(strrchr($vv->img, '.'), 1) }}" style="width:50px;height:50px;" alt="">
+                                                @endforeach
+                                            </div>
 
-                                            <a title="删除" onclick="member_del(this,'{{ $item->id }}')" href="javascript:;"><i class="layui-icon">&#xe640;</i></a>
                                         </td>
+                                        <td>{{ $item->created_at }}</td>
+                                        {{--<td class="td-manage">
+                                            --}}{{--<a title="下载" onclick="xadmin.open('编辑','{{ url('admin/channel/'.$item->id.'/edit') }}',800,600)" href="javascript:;"><i class="icon iconfont">&#xe714;</i></a>--}}{{--
+                                            --}}{{--<a title="查看" onclick="xadmin.open('编辑','{{ url('admin/channel/'.$item->id.'/edit') }}',800,600)" href="javascript:;"><i class="layui-icon">&#xe63c;</i></a>
+--}}{{--
+                                            <a title="删除" onclick="member_del(this,'{{ $item->id }}')" href="javascript:;"><i class="layui-icon">&#xe640;</i></a>
+                                        </td>--}}
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -110,10 +125,14 @@
             </div>
         </div>
     </body>
-    <script>layui.use(['laydate', 'form'],
+    <script>layui.use(['laydate', 'form','layer'],
         function() {
             var laydate = layui.laydate;
-
+            var layer = layui.layer;
+            layer.photos({
+                photos: '#layer-photos'
+                ,shift: 5 //0-6的选择，指定弹出图片动画类型，默认随机
+            });
             //执行一个laydate实例
             laydate.render({
                 elem: '#start' //指定元素
@@ -186,6 +205,7 @@
 
             });
         }
+
 
 
     </script>

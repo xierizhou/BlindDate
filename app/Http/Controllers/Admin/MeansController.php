@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Means;
 use Illuminate\Http\Request;
 
 class MeansController extends Controller
@@ -14,7 +15,10 @@ class MeansController extends Controller
      */
     public function index()
     {
-        return view('admin.means.index');
+        $data = Means::with('photos')->orderBy('created_at','desc')->paginate(10);
+
+        return view('admin.means.index')->with('data',$data);
+
     }
 
     /**

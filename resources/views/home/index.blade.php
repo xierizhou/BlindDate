@@ -569,6 +569,9 @@
     $("#qita_xueli").click(function(){
         $("#text_education_qita").focus();
     });
+    $("#text_education_qita").click(function(){
+        $("#qita_xueli").click();
+    });
     function message($msg){
         layer.open({
             content: $msg

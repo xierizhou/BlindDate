@@ -5,11 +5,11 @@
         <!-- 顶部开始 -->
         <div class="container">
             <div class="logo">
-                <a href="./index.html">SaaS管理系统 v1.0</a></div>
+                <a href="javascript;">管理系统 v1.0</a></div>
             <div class="left_open">
                 <a><i title="展开左侧栏" class="iconfont">&#xe699;</i></a>
             </div>
-            <ul class="layui-nav left fast-add" lay-filter="">
+            {{--<ul class="layui-nav left fast-add" lay-filter="">
                 <li class="layui-nav-item">
                     <a href="javascript:;">+新增</a>
                     <dl class="layui-nav-child">
@@ -31,19 +31,19 @@
                                 <i class="iconfont">&#xe6b8;</i>在tab打开刷新</a></dd>
                     </dl>
                 </li>
-            </ul>
+            </ul>--}}
             <ul class="layui-nav right" lay-filter="">
                 <li class="layui-nav-item">
                     <a href="javascript:;">{{ auth('admin')->user()->username }}</a>
                     <dl class="layui-nav-child">
                         <!-- 二级菜单 -->
-                        <dd><a onclick="xadmin.open('个人信息','http://www.baidu.com')">个人信息</a></dd>
+                        {{--<dd><a onclick="xadmin.open('个人信息','http://www.baidu.com')">个人信息</a></dd>--}}
                         {{--<dd><a onclick="xadmin.open('切换帐号','http://www.baidu.com')">切换帐号</a></dd>--}}
                         <dd><a href="{{ url('admin/logout') }}">退出</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item to-index">
-                    <a href="/">前台首页</a></li>
+                {{--<li class="layui-nav-item to-index">
+                    <a href="/">前台首页</a></li>--}}
             </ul>
         </div>
         <!-- 顶部结束 -->
@@ -56,23 +56,23 @@
                     <li>
                         <a href="javascript:;">
                             <i class="iconfont left-nav-li" lay-tips="应用管理">&#xe6b4;</i>
-                            <cite>应用管理</cite>
+                            <cite>资料库</cite>
                             <i class="iconfont nav_right">&#xe697;</i></a>
                         <ul class="sub-menu">
                             <li>
-                                <a onclick="xadmin.add_tab('应用列表','{{ url('admin/app') }}')">
+                                <a onclick="xadmin.add_tab('资料列表','{{ url('admin/means') }}')">
                                     <i class="iconfont">&#xe6a7;</i>
-                                    <cite>应用列表</cite></a>
+                                    <cite>资料列表</cite></a>
                             </li>
-                            <li>
+                            {{--<li>
                                 <a onclick="xadmin.add_tab('版本列表','{{ url('admin/app/version') }}')">
                                     <i class="iconfont">&#xe6a7;</i>
                                     <cite>版本列表</cite></a>
-                            </li>
+                            </li>--}}
                         </ul>
                     </li>
 
-                    <li>
+                    {{--<li>
                         <a href="javascript:;">
                             <i class="iconfont left-nav-li" lay-tips="客户管理">&#xe6b8;</i>
                             <cite>客户管理</cite>
@@ -89,7 +89,7 @@
                                     <cite>版本列表</cite></a>
                             </li>
                         </ul>
-                    </li>
+                    </li>--}}
 
 {{--
                     <li>

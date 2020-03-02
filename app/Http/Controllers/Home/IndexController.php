@@ -30,7 +30,7 @@ class IndexController extends Controller
                     'sex' => $request->sex,
                     'birthday' => $request->birthday,
                     'height' => $request->height,
-                    'education' => $request->education,
+                    'education' => $request->education.$request->education_qi,
                     'monthly_income' => $request->monthly_income,
                     'marriage_history' => $request->marriage_history,
                     'introduce' => $request->introduce,
@@ -56,7 +56,6 @@ class IndexController extends Controller
             });
             return response()->json(['code'=>200,'message'=>'提交成功']);
         }catch (\Exception $exception){
-            dd($exception->getMessage());
             return response()->json(['code'=>400,'message'=>'系统异常！']);
         }
 
@@ -83,10 +82,10 @@ class IndexController extends Controller
                 $realPath = $file->getRealPath();
 
 
-                $filename = '/means/'.date('Ymd').uniqid().'.'.$ext;
+                $filename = '/means/'.date('Ymd').'/'.uniqid().'.'.$ext;
                 $bool = Storage::disk('uploads')->put($filename,file_get_contents($realPath));
                 Image::make($file)->resize(30,30)->save(public_path('/uploads'.$filename."_30x30.".$ext));//压缩并保存照片
-
+                Image::make($file)->resize(50,50)->save(public_path('/uploads'.$filename."_50x50.".$ext));//压缩并保存照片
                 //判断是否上传成功
                 if($bool){
                     return response()->json(['code'=>200,'input_img'=>'/uploads'.$filename,'img'=>'/uploads'.$filename."_30x30.".$ext]);

@@ -13,7 +13,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="layui-col-md12">
+                {{--<div class="layui-col-md12">
                     <div class="layui-card">
                         <div class="layui-card-header">数据统计</div>
                         <div class="layui-card-body ">
@@ -65,8 +65,8 @@
                             </ul>
                         </div>
                     </div>
-                </div>
-                <div class="layui-col-sm6 layui-col-md3">
+                </div>--}}
+                {{--<div class="layui-col-sm6 layui-col-md3">
                     <div class="layui-card">
                         <div class="layui-card-header">下载
                             <span class="layui-badge layui-bg-cyan layuiadmin-badge">月</span></div>
@@ -104,8 +104,8 @@
                             </p>
                         </div>
                     </div>
-                </div>
-                <div class="layui-col-sm6 layui-col-md3">
+                </div>--}}
+                {{--<div class="layui-col-sm6 layui-col-md3">
                     <div class="layui-card">
                         <div class="layui-card-header">下载
                             <span class="layui-badge layui-bg-cyan layuiadmin-badge">月</span></div>
@@ -117,7 +117,7 @@
                             </p>
                         </div>
                     </div>
-                </div>
+                </div>--}}
                 {{--<div class="layui-col-md12">
                     <div class="layui-card">
                         <div class="layui-card-header">系统信息</div>
@@ -170,7 +170,7 @@
                                 <tbody>
                                     <tr>
                                         <th>开发者</th>
-                                        <td>xxx(xxxxxxx@qq.com)</td></tr>
+                                        <td>jou(rjou.sye@foxmail.com)</td></tr>
                                 </tbody>
                             </table>
                         </div>

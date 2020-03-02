@@ -22,7 +22,7 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin'],function ()
         Route::get('/', 'IndexController@index');
 
         Route::get('/welcome', 'IndexController@welcome');
-        Route::resource('app', 'AppController',['except' => ['show']]);
+        Route::resource('means', 'MeansController',['except' => ['show']]);
         /*Route::resource('channel', 'ChannelController',['except' => ['show']]);
         Route::resource('user', 'UserController',['except' => ['show']]);
         Route::resource('user_material', 'UserMaterialController',['except' => ['show']]);
