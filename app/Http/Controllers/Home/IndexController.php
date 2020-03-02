@@ -40,6 +40,7 @@ class IndexController extends Controller
                 ]);
 
                 if ($request->photos) {
+                    $photos = [];
                     foreach ($request->photos as $val) {
                         if($val){
                             $photos[] = [
