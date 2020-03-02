@@ -64,13 +64,14 @@
                                 <thead>
                                     <tr>
                                         <th style="width: 20px;">序号</th>
-                                        <th style="width: 200px;">基本信息1</th>
-                                        <th style="width: 200px;">基本信息2</th>
+                                        <th style="width: 180px;">姓名</th>
+                                        <th style="width: 180px;">基本信息1</th>
+                                        <th style="width: 180px;">基本信息2</th>
                                         <th>介绍</th>
                                         <th>理想中的Ta</th>
-                                        <th>微信号</th>
-                                        <th>照片</th>
-                                        <th style="width: 150px;">提交时间</th>
+                                        <th style="width: 80px">微信号</th>
+                                        <th style="width: 80px">照片</th>
+                                        <th style="width: 120px;">提交时间</th>
                                         {{--<th>操作</th>--}}
                                     </tr>
                                 </thead>
@@ -79,6 +80,7 @@
                                 @foreach($data as $kk=>$item)
                                     <tr>
                                         <td>{{ ++$kk }}</td>
+                                        <td>{{ $item->nickname }}</td>
                                         <td>
                                             地区：{{ $item->province }}{{ $item->city }}{{ $item->area }} <br />
 
